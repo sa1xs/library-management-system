@@ -1,9 +1,9 @@
 public class Usuario {
 
-    protected String idUsuario;
-    protected String nombre;
-    protected String correo;
-    protected String telefono;
+    private String idUsuario;
+    private String nombre;
+    private String correo;
+    private String telefono;
 
     public Usuario(String idUsuario, String nombre, String correo, String telefono) {
         this.idUsuario = idUsuario;
@@ -38,5 +38,13 @@ public class Usuario {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "ID de usuario: " + idUsuario +
+                "\nNombre: " + nombre +
+                "\nCorreo: " + correo +
+                "\nTeléfono: " + telefono;
     }
 }

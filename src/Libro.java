@@ -1,5 +1,5 @@
 public class Libro {
-    
+
     private String idLibro;
     private String titulo;
     private String autor;
@@ -44,5 +44,31 @@ public class Libro {
 
     public void setAnioPublicacion(int anioPublicacion) {
         this.anioPublicacion = anioPublicacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro:" +
+                "\nID: " + idLibro +
+                "\nTítulo: " + titulo +
+                "\nAutor: " + autor +
+                "\nAño de publicación: " + anioPublicacion +
+                "\nEstado: " + (disponible ? "Disponible" : "Prestado");
+    }
+
+    public boolean prestar() {
+        if (disponible) {
+            disponible = false;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean devolver() {
+        if (!disponible) {
+            disponible = true;
+            return true;
+        }
+        return false;
     }
 }
